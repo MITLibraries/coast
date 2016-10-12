@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h1>Author Update</h1>
+  <form class="form-inline" action="" method="post" name="author">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      {{ form.name.label }}
+      {{ form.name(class_="form-control") }}
+    </div> or
+    <div class="form-group">
+      {{ form.mit_id.label }}
+      {{ form.mit_id(class_="form-control") }}
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
+  {% if authors %}
+    <div id="authors">
+      <table class="table table-condensed">
+        <tr>
+          <th>Name</th>
+          <th>MIT ID</th>
+        </tr>
+        {% for author in authors %}
+          <tr>
+            <td>{{ author.name }}</td>
+            <td>{{ author.mit_id }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  {% endif %}
+
+{% endblock %}

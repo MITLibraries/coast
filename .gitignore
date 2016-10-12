@@ -1,0 +1,8 @@
+*.DS_*
+*.pyc
+*.cache/
+*.coverage
+*.tox
+*.python*
+db_repository
+*.db
